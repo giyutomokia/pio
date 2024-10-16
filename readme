@@ -1,0 +1,68 @@
+# Rule Engine Application
+
+## Overview
+
+The Rule Engine Application determines user eligibility based on attributes like age, department, income, and spending using an Abstract Syntax Tree (AST) to create and evaluate rules.
+
+## 10 Steps to Set Up and Use the Application
+
+### 1. Clone the Repository
+```bash
+git clone <repository-url>
+cd rule-engine
+2. Create a Virtual Environment (Optional)
+bash
+Copy code
+python -m venv venv
+source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+3. Install Required Packages
+bash
+Copy code
+pip install -r requirements.txt
+4. Set Up the Database
+Ensure SQLite is installed and configured. The application will automatically create a database file when it runs.
+5. Run the Application
+bash
+Copy code
+python app.py
+6. Access the Application
+Open your web browser and go to http://127.0.0.1:5000/.
+7. Create a Rule
+Enter a rule (e.g., age > 30 AND department = 'Sales') in the form and click "Create Rule."
+8. Evaluate a Rule
+To test rules against user attributes, use the /evaluate_rule API endpoint with a JSON request body:
+json
+Copy code
+{
+    "attributes": {
+        "age": 35,
+        "department": "Sales"
+    }
+}
+9. View Output
+The evaluation will return a JSON response indicating whether the attributes meet the rule conditions:
+json
+Copy code
+{
+    "result": true
+}
+10. Handle Errors
+The application includes error handling for invalid rules. If there's an error, you will receive a message like:
+json
+Copy code
+{
+    "error": "Invalid rule syntax"
+}
+License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+Instructions to Save the README
+Open Visual Studio Code.
+Create a new file named README.md in your project root.
+Copy and paste the above content into the README.md file.
+Save the file.
+vbnet
+Copy code
+
+### Summary:
+This version breaks down the setup and usage into ten straightforward steps
